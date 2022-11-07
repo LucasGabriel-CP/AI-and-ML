@@ -115,10 +115,10 @@ class Perceptron:
         print(f'\nResults:\n{np.where(Y > 0.5, 1, 0)}\nd:\n{d}\nweights:\n{self.weights}\n')
 
 def main():
-    w = [0, 0]
-    df = pd.read_csv('data_3.csv')
+    w = [0.5, 0.5]
+    df = pd.read_csv('data_2.csv')
     print(df.head())
-    model = Perceptron(n_layers_=2, n_epochs_=2, w=w, bias_=-0.5)
+    model = Perceptron(n_layers_=1, n_epochs_=2, bias_=0.5, eta_=0.1)
     model.fit(df=df, num_iter=100000, verbose=True)
 
 if __name__ == "__main__":

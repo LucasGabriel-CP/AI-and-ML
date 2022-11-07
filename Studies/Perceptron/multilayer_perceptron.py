@@ -4,7 +4,7 @@ import pandas as pd
 from typing import Tuple
 from copy import deepcopy
 
-#Funcao de ativacao
+#Funcao de transferencia
 def f_degrau(x: float) -> int:
     return 1 if x >= 0.0 else 0
 
@@ -80,7 +80,7 @@ def run_iter(inputs: np.array, weights: np.array, hidden_weights: np.array, eta:
             all_weights.append(deepcopy(weights))
     
         #Rodar a proxima camada
-        [hidden_weights, prediction] = run_hidden(a=np.array(results), hidden_weights=hidden_weights, n=eta, d=d[i])
+        [hidden_weights, prediction] = run_hidden(a=np.array(results), hidden_weights=hidden_weights, eta=eta, d=d[i])
     
         #Guardar resultado
         predicted.append(prediction)
@@ -130,7 +130,7 @@ def perceptron(
     return [all_weights, hidden_weights], Y
 
 def main():
-    w = [-0.5, -0.5, -0.5]
+    w = [0, 0, -0.5]
     weights = np.array(w, dtype=np.float64)
     df = pd.read_csv('data_3.csv')
     print(df.head())

@@ -7,11 +7,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Tuple
 
-#Função de ativação
+#Funcao de transferencia
 def f_degrau(x: float) -> int:
     return int(x >= 0)
 
-#Função para rodar a iteração atual da rede neural
+#Funcao para rodar a iteração atual da rede neural
 def run_iter(inputs: np.ndarray, weights: np.ndarray,
                   n: float, d: np.array) -> list:
     cols = inputs.shape[0]
