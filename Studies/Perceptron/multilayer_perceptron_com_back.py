@@ -116,9 +116,9 @@ class Perceptron:
 
 def main():
     w = [0.5, 0.5]
-    df = pd.read_csv('data_2.csv')
+    df = pd.read_csv('data_1.csv')
     print(df.head())
-    model = Perceptron(n_layers_=1, n_epochs_=2, bias_=0.5, eta_=0.1)
+    model = Perceptron(n_layers_=1, n_epochs_=2, bias_=0.5, eta_=0.1, w=w)
     model.fit(df=df, num_iter=100000, verbose=True)
 
 if __name__ == "__main__":
