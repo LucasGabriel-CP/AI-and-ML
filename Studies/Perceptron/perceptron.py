@@ -1,6 +1,3 @@
-#O seguinte modelo resolve as questões 1 e 2
-#A questão 3 não é possível resolver utilizando esse modelo
-#Pois ele é não linear
 #Bibliotecas necessárias
 import numpy as np
 import pandas as pd
@@ -56,8 +53,6 @@ def percepton(df: pd.DataFrame, weights: np.array, num_iter: int, taxa: float, b
     return weights, Y
 
 def main():
-    #Para o ex 1: data_1
-    #Para o ex 2: data_2
     str = input('Qual dataset? ')
     df = pd.read_csv(str + '.csv')
     print(df.head())
